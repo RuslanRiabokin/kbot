@@ -1,0 +1,15 @@
+.PHONY: all linux macos windows clean
+
+all: linux macos windows
+
+linux:
+	GOOS=linux GOARCH=amd64 go build -o myapp-linux-amd64
+
+macos:
+	GOOS=darwin GOARCH=amd64 go build -o myapp-macos-amd64
+
+windows:
+	GOOS=windows GOARCH=amd64 go build -o myapp-windows-amd64.exe
+
+clean:
+	rm -f myapp-*
