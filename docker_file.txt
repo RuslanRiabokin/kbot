@@ -1,0 +1,43 @@
+FROM golang:1.20.7 as builder
+
+WORKDIR /go/src/app
+COPY . .
+RUN go get
+RUN make build
+
+FROM scratch
+WORKDIR /
+COPY --from=builder /go/src/app/kbot .
+COPY --from=alpine:latest /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+ENTRYPOINT [ "./kbot" ]
+
+
+
+# Используйте официальный образ Golang как builder
+FROM golang:1.20.7 as builder
+
+# Установите рабочую директорию
+WORKDIR /go/src/app
+
+# Скопируйте все файлы проекта в текущую директорию
+COPY . .
+
+# Выполните go get и make build
+RUN go get && make build
+
+# Используйте образ scratch в качестве основы для конечного образа
+FROM scratch
+
+# Установите рабочую директорию
+WORKDIR /
+
+# Скопируйте бинарный файл из предыдущего образа
+COPY --from=builder /go/src/app/kbot .
+
+# Скопируйте файл сертификатов для поддержки HTTPS
+COPY --from=alpine:latest /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+
+# Укажите точку входа для запуска приложения
+ENTRYPOINT ["./kbot"]
+
+
