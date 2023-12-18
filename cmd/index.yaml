@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  helm:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-12-18T10:33:42.25227199Z"
+    description: A Helm chart for Kubernetes
+    digest: 6ed95a83407cc3eba995545e16cc4064ef016be909600519394109d8278037da
+    name: helm
+    type: application
+    urls:
+    - https://ruslanriabokin.github.io/kbot/helm-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-12-18T10:33:42.251738851Z"
