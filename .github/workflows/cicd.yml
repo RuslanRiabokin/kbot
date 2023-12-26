@@ -32,7 +32,7 @@ jobs:
       - name: Build&Push
         env:
           APP: "kbot"
-          REGISTRY: ghcr.io/${{ github.actor }}
+          REGISTRY: ghcr.io/ruslanriabokin
         run: make image push REGISTRY=$REGISTRY TARGETARCH=$TARGETARCH
       - name: Clean
         run: make clean TARGETARCH=$TARGETARCH
