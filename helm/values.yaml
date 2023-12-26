@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 image:
-  repository: "riabokin"
+  repository: "ghcr.io/ruslanriabokin"
   tag: "v1.0.5-68fc0c6"
   arch: amd64
 secret:
