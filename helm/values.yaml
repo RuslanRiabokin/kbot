@@ -4,11 +4,9 @@
 replicaCount: 1
 image:
   repository: "riabokin"
-  tag: "v1.0.5-68fc0c6"
+  tag: "v1.0.5-c41f44f"
   arch: amd64
 secret:
   name: kbot
   key: token
   env: TELE_TOKEN
-
-
