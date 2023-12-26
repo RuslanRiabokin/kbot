@@ -5,7 +5,7 @@ replicaCount: 1
 image:
   registry: "ghcr.io"
   repository: "ruslanriabokin"
-  tag: "v1.0.5-68fc0c6"
+  tag: "v1.0.5-1671eaf"
   os: linux
   arch: amd64
 secret:
