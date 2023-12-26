@@ -4,7 +4,7 @@
 replicaCount: 1
 image:
   repository: "ghcr.io/ruslanriabokin"
-  tag: "v1.0.5-68fc0c6"
+  tag: "v1.0.5-accc14c"
   arch: amd64
 secret:
   name: kbot
